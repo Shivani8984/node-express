@@ -1,6 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./routes/promotionRouter');
+const partnerRouter = require('./routes/partnerRouter');
+
 
 const hostname = 'localhost';
 const port = 3000;
@@ -10,6 +13,9 @@ app.use(morgan('dev'));
 app.use(express.json()); //will handle parsing.json data into javascript properties of request object
 
 app.use('/campsites', campsiteRouter);
+app.use('/promotions', promotionRouter);
+app.use('/partners', partnerRouter);
+
 
 // //rest api endpoints
 // app.all('/campsites', (req, res, next) => {
